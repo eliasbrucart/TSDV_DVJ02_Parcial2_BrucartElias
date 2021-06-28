@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &339878572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7157157087914952310, guid: e47010ba2d527b44d805f7d5fee8fe5c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1567374341}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &365904361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3051360262454332042, guid: 05b56800e2a4b774ba41dd39094a5287,
+    type: 3}
+  m_PrefabInstance: {fileID: 1337985516}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 655434961}
+  - component: {fileID: 655434962}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -234,6 +247,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &655434962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655434960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 319b9fbf232eaef499e4d5dbbac72b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 1188432405}
+  - {fileID: 339878572}
+  - {fileID: 365904361}
 --- !u!1 &1182230378
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +306,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1188432405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6387509445944781957, guid: 68038d10c8798954aa9a8f1fefaf4156,
+    type: 3}
+  m_PrefabInstance: {fileID: 1632022197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1337985516
 PrefabInstance:
   m_ObjectHideFlags: 0
