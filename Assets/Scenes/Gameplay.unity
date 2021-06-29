@@ -387,10 +387,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bff4d8688e44c34d99c56f3bdbd6d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreLanded: 0
-  scoreLanded2: 0
-  scoreLanded4: 0
-  scoreLanded5: 0
+  scoreLanded: 50
+  scoreLanded2: 100
+  scoreLanded4: 200
+  scoreLanded5: 250
   lm: {fileID: 655434962}
   player: {fileID: 1191754150}
 --- !u!4 &1182230380

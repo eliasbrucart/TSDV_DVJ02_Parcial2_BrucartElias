@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
     {
         lm.ChoiceLevel();
         timer = 0.0f;
+        score = 0;
         player.Respawn();
     }
 
