@@ -337,6 +337,7 @@ MonoBehaviour:
   fuelCost: 20
   speed: 2
   rotationSpeed: 120
+  particle: {fileID: 1881211234}
   rb: {fileID: 1191754151}
 --- !u!50 &1191754151
 Rigidbody2D:

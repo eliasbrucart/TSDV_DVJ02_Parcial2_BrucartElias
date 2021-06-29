@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float fuelCost;
     [SerializeField] private float speed = 2.0f;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private ParticleSystem particle;
 
     public Rigidbody2D rb;
 
@@ -18,8 +19,8 @@ public class Player : MonoBehaviour
     private bool isMoving;
     private bool isAlive;
     private bool activeRB = false;
-    private float gravityScale;
-    private float altitude;
+    private float gravityScale; //hacer
+    private float altitude; //hacer
     private float originalGravity = 1.0f;
     private float angle = 0.0f;
 
@@ -72,16 +73,22 @@ public class Player : MonoBehaviour
         {
             angle += rotationSpeed * Time.deltaTime;
             transform.rotation = Quaternion.Euler(new Vector3(0,0,angle));
+            if (!particle.isEmitting)
+                particle.Play();
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             angle -= rotationSpeed * Time.deltaTime;
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            if (!particle.isEmitting)
+                particle.Play();
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
         {
             activeRB = true;
             isMoving = true;
+            if (!particle.isEmitting)
+                particle.Play();
             fuel -= (fuelCost * Time.deltaTime);
         }
         else
@@ -89,5 +96,7 @@ public class Player : MonoBehaviour
             isMoving = false;
             activeRB = false;
         }
+        if (!isMoving)
+            particle.Stop();
     }
 }
