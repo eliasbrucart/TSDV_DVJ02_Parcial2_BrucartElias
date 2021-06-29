@@ -336,6 +336,7 @@ MonoBehaviour:
   fuel: 1000
   fuelCost: 20
   speed: 2
+  rotationSpeed: 120
   rb: {fileID: 1191754151}
 --- !u!50 &1191754151
 Rigidbody2D:
@@ -357,7 +358,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!4 &1191754154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1551521416597096234, guid: 05d3d9c478d7078469f13a5e2adf25d8,

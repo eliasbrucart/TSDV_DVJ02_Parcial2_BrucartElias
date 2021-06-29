@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float fuel;
     [SerializeField] private float fuelCost;
     [SerializeField] private float speed = 2.0f;
+    [SerializeField] private float rotationSpeed;
 
     public Rigidbody2D rb;
 
@@ -18,8 +19,9 @@ public class Player : MonoBehaviour
     private bool isAlive;
     private bool activeRB = false;
     private float gravityScale;
-    float altitude;
-    float originalGravity = 1.0f;
+    private float altitude;
+    private float originalGravity = 1.0f;
+    private float angle = 0.0f;
 
     private Vector2 initialPos;
     private Vector2 rbForce;
@@ -55,12 +57,27 @@ public class Player : MonoBehaviour
     {
         if (!isAlive)
             return;
-        if(activeRB)
+        BoostPrepellant();
+    }
+
+    private void BoostPrepellant()
+    {
+        if (activeRB)
             rb.AddRelativeForce(rbForce);
     }
 
     private void Move()
     {
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            angle += rotationSpeed * Time.deltaTime;
+            transform.rotation = Quaternion.Euler(new Vector3(0,0,angle));
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            angle -= rotationSpeed * Time.deltaTime;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        }
         if (Input.GetKey(KeyCode.Space))
         {
             activeRB = true;
