@@ -391,6 +391,8 @@ MonoBehaviour:
   scoreLanded2: 0
   scoreLanded4: 0
   scoreLanded5: 0
+  lm: {fileID: 655434962}
+  player: {fileID: 1191754150}
 --- !u!4 &1182230380
 Transform:
   m_ObjectHideFlags: 0

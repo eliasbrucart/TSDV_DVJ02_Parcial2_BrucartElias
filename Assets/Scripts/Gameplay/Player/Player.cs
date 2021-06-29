@@ -173,4 +173,16 @@ public class Player : MonoBehaviour
             PlayerDie?.Invoke();
         }
     }
+
+    public void Respawn()
+    {
+        transform.position = new Vector3(initialPos.x, initialPos.y, 0);
+        isAlive = true;
+        isMoving = false;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = 0;
+        rb.angularDrag = 0.05f;
+        transform.rotation = Quaternion.identity;
+        angle = 0;
+    }
 }

@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour
     public int scoreLanded2;
     public int scoreLanded4;
     public int scoreLanded5;
+    public LevelManager lm;
+    public Player player;
 
     private float timer;
-    private int score;
+    public int score { get; set; }
 
     private void Awake()
     {
@@ -20,6 +22,7 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         else
             instanceGameManager = this;
+        DontDestroyOnLoad(gameObject);
     }
     void Start()
     {
@@ -30,36 +33,49 @@ public class GameManager : MonoBehaviour
         Player.PlayerLanded5 += Landed5;
     }
 
+    private void Update()
+    {
+        timer += Time.deltaTime;
+    }
+
     private void Landed()
     {
         score += scoreLanded;
-        ScenesManager.instanceScenesManager.ChangeScene("Landed");
+        Time.timeScale = 0;
+        ScenesManager.instanceScenesManager.ChangeSceneAdditive("Landed");
     }
 
     private void Landed2()
     {
         score += scoreLanded2;
-        Debug.Log("Landed2");
-        ScenesManager.instanceScenesManager.ChangeScene("Landed");
+        Time.timeScale = 0;
+        ScenesManager.instanceScenesManager.ChangeSceneAdditive("Landed");
     }
 
     private void Landed4()
     {
         score += scoreLanded4;
-        Debug.Log("Landed4");
-        ScenesManager.instanceScenesManager.ChangeScene("Landed");
+        Time.timeScale = 0;
+        ScenesManager.instanceScenesManager.ChangeSceneAdditive("Landed");
     }
 
     private void Landed5()
     {
         score += scoreLanded5;
-        Debug.Log("Landed5");
-        ScenesManager.instanceScenesManager.ChangeScene("Landed");
+        Time.timeScale = 0;
+        ScenesManager.instanceScenesManager.ChangeSceneAdditive("Landed");
     }
 
     private void CheckGameOver()
     {
-        ScenesManager.instanceScenesManager.ChangeScene("GameOver");
+        ScenesManager.instanceScenesManager.ChangeSceneAdditive("GameOver");
+    }
+
+    public void ResetGamePlay()
+    {
+        lm.ChoiceLevel();
+        timer = 0.0f;
+        player.Respawn();
     }
 
     private void OnDisable()

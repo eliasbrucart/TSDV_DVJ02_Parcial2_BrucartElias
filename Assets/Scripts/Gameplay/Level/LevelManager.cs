@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
         ChoiceLevel();
     }
 
-    private void ChoiceLevel()
+    public void ChoiceLevel()
     {
         levels[0].SetActive(false);
         levels[1].SetActive(false);
