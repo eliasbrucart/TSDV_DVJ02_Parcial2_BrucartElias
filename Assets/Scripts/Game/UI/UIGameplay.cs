@@ -14,7 +14,11 @@ public class UIGameplay : MonoBehaviour
 
     public void PauseGame()
     {
-        ScenesManager.instanceScenesManager.ChangeSceneAdditive("Pause");
+        if(Time.timeScale == 1)
+        {
+            ScenesManager.instanceScenesManager.ChangeSceneAdditive("Pause");
+            Time.timeScale = 0;
+        }
     }
 
 }

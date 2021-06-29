@@ -25,6 +25,11 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene(scene, LoadSceneMode.Additive);
     }
 
+    public void UnloadSceneAsy(string scene)
+    {
+        SceneManager.UnloadSceneAsync(scene);
+    }
+
     public void OnClickQuit()
     {
         Application.Quit();
