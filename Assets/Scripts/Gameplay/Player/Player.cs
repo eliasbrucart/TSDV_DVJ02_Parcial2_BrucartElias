@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     public static event Action PlayerLanded5;
     public static event Action PlayerCamZoom;
     public static event Action PlayerCamZoomOut;
+    public static event Action outOfFuel;
 
     void Start()
     {
@@ -64,6 +65,8 @@ public class Player : MonoBehaviour
         {
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, -speed);
         }
+        if (fuel <= 0.0f)
+            outOfFuel?.Invoke();
     }
 
     private void FixedUpdate()
@@ -183,6 +186,7 @@ public class Player : MonoBehaviour
         rb.angularVelocity = 0;
         rb.angularDrag = 0.05f;
         transform.rotation = Quaternion.identity;
+        fuel = initialFuel;
         angle = 0;
     }
 

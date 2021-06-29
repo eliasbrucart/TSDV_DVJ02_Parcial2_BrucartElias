@@ -26,11 +26,12 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        Player.PlayerDie += CheckGameOver;
+        Player.PlayerDie += CheckPlayerDie;
         Player.PlayerLanded += Landed;
         Player.PlayerLanded2 += Landed2;
         Player.PlayerLanded4 += Landed4;
         Player.PlayerLanded5 += Landed5;
+        Player.outOfFuel += OutOfFuel;
     }
 
     private void Update()
@@ -66,9 +67,16 @@ public class GameManager : MonoBehaviour
         ScenesManager.instanceScenesManager.ChangeSceneAdditive("Landed");
     }
 
-    private void CheckGameOver()
+    private void CheckPlayerDie()
+    {
+        ScenesManager.instanceScenesManager.ChangeSceneAdditive("Crash");
+        Time.timeScale = 0;
+    }
+
+    private void OutOfFuel()
     {
         ScenesManager.instanceScenesManager.ChangeSceneAdditive("GameOver");
+        Time.timeScale = 0;
     }
 
     public void ResetGamePlay()
@@ -81,10 +89,11 @@ public class GameManager : MonoBehaviour
 
     private void OnDisable()
     {
-        Player.PlayerDie -= CheckGameOver;
+        Player.PlayerDie -= CheckPlayerDie;
         Player.PlayerLanded -= Landed;
         Player.PlayerLanded2 -= Landed2;
         Player.PlayerLanded4 -= Landed4;
         Player.PlayerLanded5 -= Landed5;
+        Player.outOfFuel -= OutOfFuel;
     }
 }
