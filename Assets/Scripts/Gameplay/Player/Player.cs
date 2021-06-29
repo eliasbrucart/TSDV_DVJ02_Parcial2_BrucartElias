@@ -185,4 +185,20 @@ public class Player : MonoBehaviour
         transform.rotation = Quaternion.identity;
         angle = 0;
     }
+
+    public float GetFuel()
+    {
+        return fuel;
+    }
+
+    public Rigidbody2D GetRB()
+    {
+        return rb;
+    }
+
+    public float GetAltitude()
+    {
+        return altitude;
+    }
+
 }

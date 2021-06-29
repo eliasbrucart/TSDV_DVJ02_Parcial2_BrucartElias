@@ -818,6 +818,7 @@ MonoBehaviour:
   scoreLanded5: 250
   lm: {fileID: 655434962}
   player: {fileID: 1191754150}
+  timer: 0
 --- !u!4 &1182230380
 Transform:
   m_ObjectHideFlags: 0
@@ -1960,6 +1961,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed2d66573b71214fa034c7a38a7b3ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 433783414}
+  timeText: {fileID: 1383190565}
+  fuelText: {fileID: 220813663}
+  altitudeText: {fileID: 1396979470}
+  verticalSpeedText: {fileID: 1197671252}
+  horizontalSpeedText: {fileID: 1009511076}
+  player: {fileID: 1191754150}
 --- !u!1 &1789265660
 GameObject:
   m_ObjectHideFlags: 0

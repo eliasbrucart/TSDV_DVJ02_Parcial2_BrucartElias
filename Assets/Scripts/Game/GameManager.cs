@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public LevelManager lm;
     public Player player;
 
-    private float timer;
+    public float timer;
     public int score { get; set; }
 
     private void Awake()
