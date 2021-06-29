@@ -107,26 +107,26 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Platform"))
-        {
-            //llamar evento de landed
-            isAlive = false;
-        }
-        if (collision.gameObject.CompareTag("Platform2"))
-        {
-            //llamar evento de landed
-            isAlive = false;
-        }
-        if (collision.gameObject.CompareTag("Platform4"))
-        {
-            //llamar evento de landed
-            isAlive = false;
-        }
-        if (collision.gameObject.CompareTag("Platform5"))
-        {
-            //llamar evento de landed
-            isAlive = false;
-        }
+        //if (collision.gameObject.CompareTag("Platform1"))
+        //{
+        //    //llamar evento de landed
+        //    isAlive = false;
+        //}
+        //if (collision.gameObject.CompareTag("Platform2"))
+        //{
+        //    //llamar evento de landed
+        //    isAlive = false;
+        //}
+        //if (collision.gameObject.CompareTag("Platform4"))
+        //{
+        //    //llamar evento de landed
+        //    isAlive = false;
+        //}
+        //if (collision.gameObject.CompareTag("Platform5"))
+        //{
+        //    //llamar evento de landed
+        //    isAlive = false;
+        //}
         if (collision.gameObject.CompareTag("MountainMoon"))
         {
             isAlive = false;

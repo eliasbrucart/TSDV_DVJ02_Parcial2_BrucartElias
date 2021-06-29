@@ -15,12 +15,12 @@ public class ScenesManager : MonoBehaviour
             instanceScenesManager = this;
     }
 
-    void ChangeScene(string scene)
+    public void ChangeScene(string scene)
     {
         SceneManager.LoadScene(scene);
     }
 
-    void OnClickQuit()
+    public void OnClickQuit()
     {
         Application.Quit();
     }

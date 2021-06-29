@@ -18,14 +18,9 @@ public class GameManager : MonoBehaviour
         Player.PlayerDie += CheckGameOver;
     }
 
-    void Update()
-    {
-        
-    }
-
     private void CheckGameOver()
     {
-
+        ScenesManager.instanceScenesManager.ChangeScene("GameOver");
     }
 
     private void OnDisable()
