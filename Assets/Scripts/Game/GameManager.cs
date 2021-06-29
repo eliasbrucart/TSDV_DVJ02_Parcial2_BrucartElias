@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int scoreLanded4;
     public int scoreLanded5;
 
+    private float timer;
     private int score;
 
     private void Awake()
