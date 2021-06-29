@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] private ParticleSystem particle;
     [SerializeField] private LayerMask mountain;
     [SerializeField] private LayerMask platform;
+    [SerializeField] private float rayDistance;
 
     public Rigidbody2D rb;
 
@@ -35,6 +36,7 @@ public class Player : MonoBehaviour
     public static event Action PlayerLanded2;
     public static event Action PlayerLanded4;
     public static event Action PlayerLanded5;
+    public static event Action PlayerCamZoom;
 
     void Start()
     {
@@ -69,6 +71,7 @@ public class Player : MonoBehaviour
             return;
         BoostPrepellant();
         CalculateAltitude();
+        ZoomCamToPlayer();
     }
 
     private void BoostPrepellant()
@@ -77,11 +80,17 @@ public class Player : MonoBehaviour
             rb.AddRelativeForce(rbForce);
     }
 
-    void CalculateAltitude()
+    private void CalculateAltitude()
     {
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.down, 100, mountain);
         if ((hit.collider.CompareTag("MountainMoon")) || (hit.collider.CompareTag("Platform1")) || (hit.collider.CompareTag("Platform2")) || (hit.collider.CompareTag("Platform4")) || (hit.collider.CompareTag("Platform5")))
             altitude = Mathf.Abs(hit.point.y - transform.position.y);
+    }
+
+    private void ZoomCamToPlayer()
+    {
+        if (Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.down, rayDistance, mountain) || Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.down, rayDistance, platform))
+            PlayerCamZoom?.Invoke();
     }
 
     private void Move()
