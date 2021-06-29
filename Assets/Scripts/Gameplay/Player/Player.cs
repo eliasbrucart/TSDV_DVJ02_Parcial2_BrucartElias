@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     private bool isAlive;
     private bool activeRB = false;
     private float gravityScale;
-    private float altitude; //hacer
+    private float altitude;
     private float originalGravity = 1.0f;
     private float angle = 0.0f;
 
@@ -32,6 +32,9 @@ public class Player : MonoBehaviour
 
     public static event Action PlayerDie;
     public static event Action PlayerLanded;
+    public static event Action PlayerLanded2;
+    public static event Action PlayerLanded4;
+    public static event Action PlayerLanded5;
 
     void Start()
     {
@@ -110,7 +113,12 @@ public class Player : MonoBehaviour
             isMoving = false;
             activeRB = false;
         }
-        if (!isMoving)
+        StopParticlePlayer();
+    }
+
+    void StopParticlePlayer()
+    {
+        if (!isAlive || !isMoving)
             particle.Stop();
     }
 
@@ -121,25 +129,34 @@ public class Player : MonoBehaviour
             PlayerLanded?.Invoke();
             isAlive = false;
             isMoving = false;
+            StopParticlePlayer();
         }
-        //if (collision.gameObject.CompareTag("Platform2"))
-        //{
-        //    //llamar evento de landed
-        //    isAlive = false;
-        //}
-        //if (collision.gameObject.CompareTag("Platform4"))
-        //{
-        //    //llamar evento de landed
-        //    isAlive = false;
-        //}
-        //if (collision.gameObject.CompareTag("Platform5"))
-        //{
-        //    //llamar evento de landed
-        //    isAlive = false;
-        //}
+        if (collision.gameObject.CompareTag("Platform2"))
+        {
+            PlayerLanded2?.Invoke();
+            isAlive = false;
+            isMoving = false;
+            StopParticlePlayer();
+        }
+        if (collision.gameObject.CompareTag("Platform4"))
+        {
+            PlayerLanded4?.Invoke();
+            isAlive = false;
+            isMoving = false;
+            StopParticlePlayer();
+        }
+        if (collision.gameObject.CompareTag("Platform5"))
+        {
+            PlayerLanded5?.Invoke();
+            isAlive = false;
+            isMoving = false;
+            StopParticlePlayer();
+        }
         if (collision.gameObject.CompareTag("MountainMoon"))
         {
             isAlive = false;
+            isMoving = false;
+            StopParticlePlayer();
             fuel = 0.0f;
             PlayerDie?.Invoke();
         }
