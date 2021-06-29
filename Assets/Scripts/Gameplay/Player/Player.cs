@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     private bool isMoving;
     private bool isAlive;
     private bool activeRB = false;
-    private float gravityScale; //hacer
+    private float gravityScale;
     private float altitude; //hacer
     private float originalGravity = 1.0f;
     private float angle = 0.0f;
@@ -64,12 +64,20 @@ public class Player : MonoBehaviour
         if (!isAlive)
             return;
         BoostPrepellant();
+        CalculateAltitude();
     }
 
     private void BoostPrepellant()
     {
         if (activeRB)
             rb.AddRelativeForce(rbForce);
+    }
+
+    void CalculateAltitude()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.down, 100, mountain);
+        if ((hit.collider.CompareTag("MountainMoon")) || (hit.collider.CompareTag("Platform1")) || (hit.collider.CompareTag("Platform2")) || (hit.collider.CompareTag("Platform4")) || (hit.collider.CompareTag("Platform5")))
+            altitude = Mathf.Abs(hit.point.y - transform.position.y);
     }
 
     private void Move()

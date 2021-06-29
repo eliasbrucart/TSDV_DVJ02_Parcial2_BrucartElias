@@ -419,6 +419,12 @@ MonoBehaviour:
   speed: 2
   rotationSpeed: 120
   particle: {fileID: 1881211234}
+  mountain:
+    serializedVersion: 2
+    m_Bits: 256
+  platform:
+    serializedVersion: 2
+    m_Bits: 512
   rb: {fileID: 1191754151}
 --- !u!50 &1191754151
 Rigidbody2D:
