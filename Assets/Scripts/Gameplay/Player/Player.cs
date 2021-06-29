@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     public static event Action PlayerLanded4;
     public static event Action PlayerLanded5;
     public static event Action PlayerCamZoom;
+    public static event Action PlayerCamZoomOut;
 
     void Start()
     {
@@ -91,6 +92,8 @@ public class Player : MonoBehaviour
     {
         if (Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.down, rayDistance, mountain) || Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.down, rayDistance, platform))
             PlayerCamZoom?.Invoke();
+        else
+            PlayerCamZoomOut?.Invoke();
     }
 
     private void Move()

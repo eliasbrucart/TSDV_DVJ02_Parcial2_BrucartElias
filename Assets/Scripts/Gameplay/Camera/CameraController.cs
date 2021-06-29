@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         Player.PlayerCamZoom += FollowPlayer;
+        Player.PlayerCamZoomOut += ZoomOut;
         initialPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 
@@ -18,13 +19,19 @@ public class CameraController : MonoBehaviour
         offset = new Vector3(0,0,-5.0f);
     }
 
-    void FollowPlayer()
+    private void FollowPlayer()
     {
         transform.position = Vector3.Lerp(transform.position, player.position + offset, 0.5f);
+    }
+
+    private void ZoomOut()
+    {
+        transform.position = Vector3.Lerp(transform.position, initialPosition, 0.5f);
     }
 
     private void OnDisable()
     {
         Player.PlayerCamZoom -= FollowPlayer;
+        Player.PlayerCamZoomOut -= ZoomOut;
     }
 }
