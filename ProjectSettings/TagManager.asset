@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Platform1
+  - Platform2
+  - Platform3
+  - Platform4
+  - Platform5
+  - MountainMoon
   layers:
   - Default
   - TransparentFX
@@ -13,8 +19,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Mountains
+  - Platforms
   - 
   - 
   - 

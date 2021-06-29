@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 2.0f;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private ParticleSystem particle;
+    [SerializeField] private LayerMask mountain;
+    [SerializeField] private LayerMask platform;
 
     public Rigidbody2D rb;
 
@@ -26,6 +29,8 @@ public class Player : MonoBehaviour
 
     private Vector2 initialPos;
     private Vector2 rbForce;
+
+    public static event Action PlayerDie;
 
     void Start()
     {
@@ -98,5 +103,35 @@ public class Player : MonoBehaviour
         }
         if (!isMoving)
             particle.Stop();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+            //llamar evento de landed
+            isAlive = false;
+        }
+        if (collision.gameObject.CompareTag("Platform2"))
+        {
+            //llamar evento de landed
+            isAlive = false;
+        }
+        if (collision.gameObject.CompareTag("Platform4"))
+        {
+            //llamar evento de landed
+            isAlive = false;
+        }
+        if (collision.gameObject.CompareTag("Platform5"))
+        {
+            //llamar evento de landed
+            isAlive = false;
+        }
+        if (collision.gameObject.CompareTag("MountainMoon"))
+        {
+            isAlive = false;
+            fuel = 0.0f;
+            PlayerDie?.Invoke();
+        }
     }
 }

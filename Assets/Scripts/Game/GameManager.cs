@@ -15,11 +15,21 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        
+        Player.PlayerDie += CheckGameOver;
     }
 
     void Update()
     {
         
+    }
+
+    private void CheckGameOver()
+    {
+
+    }
+
+    private void OnDisable()
+    {
+        Player.PlayerDie -= CheckGameOver;
     }
 }

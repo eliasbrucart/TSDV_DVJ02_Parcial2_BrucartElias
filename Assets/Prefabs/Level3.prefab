@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 3051360262032090581}
   - component: {fileID: 3051360262032090582}
   - component: {fileID: 8546099919844693346}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Part2
-  m_TagString: Untagged
+  m_TagString: MountainMoon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -307,9 +307,9 @@ GameObject:
   - component: {fileID: 3051360262363787251}
   - component: {fileID: 3051360262363787252}
   - component: {fileID: 3333314724050002262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Part1
-  m_TagString: Untagged
+  m_TagString: MountainMoon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -640,6 +640,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platformx5
       objectReference: {fileID: 0}
+    - target: {fileID: 1179097076244257346, guid: 2f86659001f99a345ab5536907103ab1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1179097076244257356, guid: 2f86659001f99a345ab5536907103ab1,
         type: 3}
       propertyPath: m_RootOrder
@@ -715,6 +720,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 4555849076977963940, guid: 1bfc4ff436a66294d93bce546acb3b68,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4555849076977963942, guid: 1bfc4ff436a66294d93bce546acb3b68,
         type: 3}
       propertyPath: m_RootOrder
@@ -789,6 +799,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Platformx2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729948679395104249, guid: bc3776e861db8f64db8670a9ae80729b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3729948679395104251, guid: bc3776e861db8f64db8670a9ae80729b,
         type: 3}
@@ -919,6 +934,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Platformx4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065479538064823219, guid: f8aa3430b5bb3b54fb7ce91ea3ed3636,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8aa3430b5bb3b54fb7ce91ea3ed3636, type: 3}
