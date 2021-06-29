@@ -20,6 +20,11 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
+    public void ChangeSceneAdditive(string scene)
+    {
+        SceneManager.LoadScene(scene, LoadSceneMode.Additive);
+    }
+
     public void OnClickQuit()
     {
         Application.Quit();
