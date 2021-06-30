@@ -24,4 +24,9 @@ public class UILanded : MonoBehaviour
         sc.UnloadSceneAsy("Landed");
     }
 
+    public void GoToMenu()
+    {
+        sc.ChangeScene("MainMenu");
+    }
+
 }
