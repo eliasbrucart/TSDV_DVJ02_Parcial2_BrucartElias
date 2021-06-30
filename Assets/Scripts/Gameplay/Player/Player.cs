@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -23,7 +21,6 @@ public class Player : MonoBehaviour
     private bool isMoving;
     private bool isAlive;
     private bool activeRB;
-   // private float gravityScale;
     private float altitude;
     private float originalGravity = 1.0f;
     private float angle = 0.0f;
