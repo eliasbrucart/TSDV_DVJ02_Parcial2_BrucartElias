@@ -23,10 +23,11 @@ public class Player : MonoBehaviour
     private bool isMoving;
     private bool isAlive;
     private bool activeRB;
-    private float gravityScale;
+   // private float gravityScale;
     private float altitude;
     private float originalGravity = 1.0f;
     private float angle = 0.0f;
+    private float initialAngularDrag = 0.05f;
 
     private Vector2 initialPos;
     private Vector2 rbForce;
@@ -189,7 +190,7 @@ public class Player : MonoBehaviour
         activeRB = false;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = 0;
-        rb.angularDrag = 0.05f;
+        rb.angularDrag = initialAngularDrag;
         transform.rotation = Quaternion.identity;
         angle = 0;
     }

@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
         Player.PlayerLanded5 += Landed5;
         Player.outOfFuel += OutOfFuel;
         sc = ScenesManager.instanceScenesManager;
+        score = 0;
+        timer = 0.0f;
     }
 
     private void Update()
@@ -86,7 +88,6 @@ public class GameManager : MonoBehaviour
     {
         lm.ChoiceLevel();
         timer = 0.0f;
-        score = 0;
         player.Respawn();
     }
 
