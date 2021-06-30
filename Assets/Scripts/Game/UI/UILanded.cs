@@ -20,12 +20,14 @@ public class UILanded : MonoBehaviour
     public void PlayAgainBtn()
     {
         Time.timeScale = 1;
-        gm.ResetGamePlay();
         sc.UnloadSceneAsy("Landed");
+        gm.ResetGamePlay();
     }
 
     public void GoToMenu()
     {
+        Time.timeScale = 1;
+        gm.ResetTimer();
         sc.ChangeScene("MainMenu");
     }
 

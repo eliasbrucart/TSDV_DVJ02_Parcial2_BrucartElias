@@ -184,11 +184,12 @@ public class Player : MonoBehaviour
         transform.position = new Vector3(initialPos.x, initialPos.y, 0);
         isAlive = true;
         isMoving = true;
-        activeRB = false;
+        activeRB = true;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = 0;
         rb.angularDrag = initialAngularDrag;
         transform.rotation = Quaternion.identity;
+        fuel = initialFuel;
         angle = 0;
     }
 

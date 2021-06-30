@@ -87,8 +87,14 @@ public class GameManager : MonoBehaviour
     public void ResetGamePlay()
     {
         lm.ChoiceLevel();
-        timer = 0.0f;
+        ResetTimer();
+        score = 0;
         player.Respawn();
+    }
+
+    public void ResetTimer()
+    {
+        timer = 0.0f;
     }
 
     private void OnDisable()

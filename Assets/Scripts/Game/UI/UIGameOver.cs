@@ -10,11 +10,6 @@ public class UIGameOver : MonoBehaviour
         sc = ScenesManager.instanceScenesManager;
     }
 
-    void Update()
-    {
-        
-    }
-
     public void PlayAgain()
     {
         sc.UnloadSceneAsy("GameOver");
