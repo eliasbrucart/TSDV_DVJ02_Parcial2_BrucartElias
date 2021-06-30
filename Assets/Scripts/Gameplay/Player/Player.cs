@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     {
         isAlive = true;
         isMoving = true;
+        initialFuel = fuel;
         initialPos = new Vector2(transform.position.x, transform.position.y);
         activeRB = false;
         rb.GetComponent<Rigidbody2D>();
@@ -67,7 +68,10 @@ public class Player : MonoBehaviour
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, -speed);
         }
         if (fuel <= 0.0f)
+        {
             outOfFuel?.Invoke();
+            fuel = initialFuel;
+        }
     }
 
     private void FixedUpdate()

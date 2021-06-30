@@ -861,7 +861,7 @@ MonoBehaviour:
   moonGravity: 1.62
   force: 3
   fuel: 1000
-  fuelCost: 20
+  fuelCost: 500
   speed: 2
   rotationSpeed: 120
   particle: {fileID: 1881211234}
