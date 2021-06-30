@@ -4,21 +4,24 @@ using UnityEngine;
 public class UILanded : MonoBehaviour
 {
     public TMP_Text scoreText;
+    private GameManager gm;
+    private ScenesManager sc;
     void Start()
     {
-        
+        gm = GameManager.instanceGameManager;
+        sc = ScenesManager.instanceScenesManager;
     }
 
     void Update()
     {
-        scoreText.text = "Score: " + GameManager.instanceGameManager.score;
+        scoreText.text = "Score: " + gm.score;
     }
 
     public void PlayAgainBtn()
     {
         Time.timeScale = 1;
-        GameManager.instanceGameManager.ResetGamePlay();
-        ScenesManager.instanceScenesManager.UnloadSceneAsy("Landed");
+        gm.ResetGamePlay();
+        sc.UnloadSceneAsy("Landed");
     }
 
 }

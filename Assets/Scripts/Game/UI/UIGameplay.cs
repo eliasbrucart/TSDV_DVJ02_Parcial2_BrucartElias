@@ -12,15 +12,19 @@ public class UIGameplay : MonoBehaviour
 
     public Player player;
 
+    private GameManager gm;
+    private ScenesManager sc;
+
     void Start()
     {
-        
+        gm = GameManager.instanceGameManager;
+        sc = ScenesManager.instanceScenesManager;
     }
 
     void Update()
     {
-        scoreText.text = "Score: " + GameManager.instanceGameManager.score;
-        timeText.text = "Time: " + GameManager.instanceGameManager.timer.ToString("F2");
+        scoreText.text = "Score: " + gm.score;
+        timeText.text = "Time: " + gm.timer.ToString("F2");
         fuelText.text = "Fuel: " + player.GetFuel().ToString("F2");
         altitudeText.text = "Altitude: " + player.GetAltitude().ToString("F2");
         verticalSpeedText.text = "Vertial Speed: " + Mathf.Abs(player.GetRB().velocity.y).ToString("F2");
@@ -31,7 +35,7 @@ public class UIGameplay : MonoBehaviour
     {
         if(Time.timeScale == 1)
         {
-            ScenesManager.instanceScenesManager.ChangeSceneAdditive("Pause");
+            sc.ChangeSceneAdditive("Pause");
             Time.timeScale = 0;
         }
     }

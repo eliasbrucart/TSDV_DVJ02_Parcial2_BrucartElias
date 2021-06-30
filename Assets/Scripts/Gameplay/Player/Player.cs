@@ -191,7 +191,6 @@ public class Player : MonoBehaviour
         rb.angularVelocity = 0;
         rb.angularDrag = 0.05f;
         transform.rotation = Quaternion.identity;
-        //fuel = initialFuel;
         angle = 0;
     }
 

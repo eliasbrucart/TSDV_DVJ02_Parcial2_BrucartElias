@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public float timer;
     public int score { get; set; }
 
+    private ScenesManager sc;
+
     private void Awake()
     {
         if (instanceGameManager != this && instanceGameManager != null)
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
         Player.PlayerLanded4 += Landed4;
         Player.PlayerLanded5 += Landed5;
         Player.outOfFuel += OutOfFuel;
+        sc = ScenesManager.instanceScenesManager;
     }
 
     private void Update()
@@ -43,39 +46,39 @@ public class GameManager : MonoBehaviour
     {
         score += scoreLanded;
         Time.timeScale = 0;
-        ScenesManager.instanceScenesManager.ChangeSceneAdditive("Landed");
+        sc.ChangeSceneAdditive("Landed");
     }
 
     private void Landed2()
     {
         score += scoreLanded2;
         Time.timeScale = 0;
-        ScenesManager.instanceScenesManager.ChangeSceneAdditive("Landed");
+        sc.ChangeSceneAdditive("Landed");
     }
 
     private void Landed4()
     {
         score += scoreLanded4;
         Time.timeScale = 0;
-        ScenesManager.instanceScenesManager.ChangeSceneAdditive("Landed");
+        sc.ChangeSceneAdditive("Landed");
     }
 
     private void Landed5()
     {
         score += scoreLanded5;
         Time.timeScale = 0;
-        ScenesManager.instanceScenesManager.ChangeSceneAdditive("Landed");
+        sc.ChangeSceneAdditive("Landed");
     }
 
     private void CheckPlayerDie()
     {
-        ScenesManager.instanceScenesManager.ChangeSceneAdditive("Crash");
+        sc.ChangeSceneAdditive("Crash");
         Time.timeScale = 0;
     }
 
     private void OutOfFuel()
     {
-        ScenesManager.instanceScenesManager.ChangeSceneAdditive("GameOver");
+        sc.ChangeSceneAdditive("GameOver");
         Time.timeScale = 0;
     }
 

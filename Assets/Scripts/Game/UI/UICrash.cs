@@ -4,9 +4,16 @@ using UnityEngine;
 public class UICrash : MonoBehaviour
 {
     public static event Action RespawnPlayer;
+
+    private ScenesManager sc;
+    private void Start()
+    {
+        sc = ScenesManager.instanceScenesManager;
+    }
+
     public void ContinueToLevel()
     {
-        ScenesManager.instanceScenesManager.UnloadSceneAsy("Crash");
+        sc.UnloadSceneAsy("Crash");
         Time.timeScale = 1;
         RespawnPlayer?.Invoke();
     }

@@ -2,9 +2,12 @@
 
 public class UIGameOver : MonoBehaviour
 {
+    private GameManager gm;
+    private ScenesManager sc;
     void Start()
     {
-        
+        gm = GameManager.instanceGameManager;
+        sc = ScenesManager.instanceScenesManager;
     }
 
     void Update()
@@ -14,20 +17,20 @@ public class UIGameOver : MonoBehaviour
 
     public void PlayAgain()
     {
-        ScenesManager.instanceScenesManager.UnloadSceneAsy("GameOver");
-        GameManager.instanceGameManager.ResetGamePlay();
+        sc.UnloadSceneAsy("GameOver");
+        gm.ResetGamePlay();
         Time.timeScale = 1;
     }
 
     public void MainMenuBtn()
     {
-        ScenesManager.instanceScenesManager.UnloadSceneAsy("GameOver");
-        ScenesManager.instanceScenesManager.ChangeScene("MainMenu");
+        sc.UnloadSceneAsy("GameOver");
+        sc.ChangeScene("MainMenu");
         Time.timeScale = 1;
     }
 
     public void QuitBtn()
     {
-        ScenesManager.instanceScenesManager.OnClickQuit();
+        sc.OnClickQuit();
     }
 }
