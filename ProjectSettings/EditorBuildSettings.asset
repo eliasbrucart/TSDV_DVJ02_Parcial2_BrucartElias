@@ -27,9 +27,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Crash.unity
     guid: 199420fdd0d1df546aad7abc2060aedd
   - enabled: 1
-    path: Assets/Scenes/HighScore.unity
-    guid: 4f56726567ac79144bbc41665c39cf30
-  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 34e0170ae59e6664c94499f131e4aa7b
   m_configObjects: {}

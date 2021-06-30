@@ -4,7 +4,7 @@
 
 <p>Video game made between HardGames and Cachuflitos Games</p>
 
-<h3>Trello page:</h3><a><p>link</p></a>
+<h3>Trello page:</h3><a><p>https://trello.com/b/j8P0zl4T/lunar-lander</p></a>
 
 <h3>Development times</h3>
 
