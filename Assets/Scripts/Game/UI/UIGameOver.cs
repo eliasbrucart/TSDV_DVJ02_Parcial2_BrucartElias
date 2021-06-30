@@ -20,6 +20,7 @@ public class UIGameOver : MonoBehaviour
         sc.UnloadSceneAsy("GameOver");
         gm.ResetGamePlay();
         Time.timeScale = 1;
+        SaveManager.Save(gm.score);
     }
 
     public void MainMenuBtn()
@@ -27,6 +28,7 @@ public class UIGameOver : MonoBehaviour
         sc.UnloadSceneAsy("GameOver");
         sc.ChangeScene("MainMenu");
         Time.timeScale = 1;
+        SaveManager.Save(gm.score);
     }
 
     public void QuitBtn()
