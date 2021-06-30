@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     private float initialFuel;
     private bool isMoving;
     private bool isAlive;
-    private bool activeRB = false;
+    private bool activeRB;
     private float gravityScale;
     private float altitude;
     private float originalGravity = 1.0f;
@@ -44,11 +44,12 @@ public class Player : MonoBehaviour
     {
         isAlive = true;
         isMoving = true;
-        initialFuel = fuel;
         initialPos = new Vector2(transform.position.x, transform.position.y);
+        activeRB = false;
         rb.GetComponent<Rigidbody2D>();
         float newGravity = (moonGravity * originalGravity) / gravity;
         rb.gravityScale = newGravity;
+        UICrash.RespawnPlayer += Respawn;
     }
 
     void Update()
@@ -172,7 +173,6 @@ public class Player : MonoBehaviour
             isAlive = false;
             isMoving = false;
             StopParticlePlayer();
-            fuel = 0.0f;
             PlayerDie?.Invoke();
         }
     }
@@ -181,12 +181,13 @@ public class Player : MonoBehaviour
     {
         transform.position = new Vector3(initialPos.x, initialPos.y, 0);
         isAlive = true;
-        isMoving = false;
+        isMoving = true;
+        activeRB = false;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = 0;
         rb.angularDrag = 0.05f;
         transform.rotation = Quaternion.identity;
-        fuel = initialFuel;
+        //fuel = initialFuel;
         angle = 0;
     }
 
@@ -205,4 +206,8 @@ public class Player : MonoBehaviour
         return altitude;
     }
 
+    private void OnDisable()
+    {
+        UICrash.RespawnPlayer -= Respawn;
+    }
 }
